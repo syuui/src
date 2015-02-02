@@ -11,6 +11,7 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 
+import cn.com.nttdatabj.h2.uq.GeneralClass;
 import cn.com.nttdatabj.h2.uq.LogDataStore;
 import cn.com.nttdatabj.h2.uq.window.MainWindow;
 
@@ -46,7 +47,8 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 			BufferedReader br = null;
 			String data = null;
 
-			MainWindow w = MainWindow.getInstance();
+			GeneralClass g = GeneralClass.getInstance();
+			MainWindow w = g.getMainWindowInstance();
 			w.setTitle(f.getName());
 
 			try {

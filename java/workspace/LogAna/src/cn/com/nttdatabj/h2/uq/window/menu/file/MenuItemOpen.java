@@ -13,7 +13,7 @@ public class MenuItemOpen extends MenuItems {
 
 	@Override
 	public JMenuItem CreateMenuItem() {
-		JMenu mntmOpen = new JMenu("ファイルを開く(O)");
+		JMenu mntmOpen = new JMenu("ログを開く(O)");
 		mntmOpen.setMnemonic('O');
 
 		MenuItemOpenCQ mntmOpenCQ = new MenuItemOpenCQ();

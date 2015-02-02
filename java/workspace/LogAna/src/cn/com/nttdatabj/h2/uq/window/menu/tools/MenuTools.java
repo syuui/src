@@ -10,6 +10,7 @@ public class MenuTools extends Menus {
 	public JMenu CreateMenu(){
 		final JMenu mn = new JMenu("ツール(T)");
 		mn.setMnemonic('T');
+		
 		MenuItemIPC mntmIPC = new MenuItemIPC();
 		mn.add(mntmIPC.CreateMenuItem());
 /*		

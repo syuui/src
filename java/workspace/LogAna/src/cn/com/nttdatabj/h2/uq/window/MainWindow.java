@@ -3,27 +3,23 @@ package cn.com.nttdatabj.h2.uq.window;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
-
 import cn.com.nttdatabj.h2.uq.window.menu.file.MenuFile;
+import cn.com.nttdatabj.h2.uq.window.menu.log.MenuLog;
 import cn.com.nttdatabj.h2.uq.window.menu.tools.MenuTools;
 
-public class MainWindow {
+public class MainWindow extends JFrame{
 
-	private JFrame frame;
-	private static MainWindow _instance = new MainWindow();
+	private static String WINDOW_NAME = "UFO（UQ Fast Operation）";
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-	public static MainWindow getInstance() {
-		return _instance;
-	}
-	
-	public void setTitle(String winTitle) {
-		frame.setTitle("Log解析".concat(" - ").concat(winTitle));
-	}
-	
 	/**
 	 * Create the application.
 	 */
-	private MainWindow() {
+	public MainWindow() {
 		super();
 		initialize();
 	}
@@ -32,45 +28,52 @@ public class MainWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		createWindow();
+		setWindow();
 		setIcon();
 		setMenu();
-		setVisible(true);
 	}
-	
+
 	/**
 	 * Create the window
 	 */
-	private void createWindow() {
-		frame = new JFrame();
-		frame.setTitle("log解析器");
-		frame.setBounds(100,100,960,640);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+	private void setWindow() {
+		setCustomTitle();
+		setBounds(100, 100, 960, 640);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	/**
-	 * Set menubar for the window
+	 * Set title for the window
 	 */
-    private void setMenu() {
+	public void setCustomTitle(String winTitle) {
+		setTitle(MainWindow.WINDOW_NAME + " - " + winTitle);
+	}
+	public void setCustomTitle() {
+		setTitle(MainWindow.WINDOW_NAME);
+	}
+	
+	/**
+	 * Set icon for the window
+	 */
+	private void setIcon() {
+		ImageIcon icon = new ImageIcon("./img/logo.jpg");
+		setIconImage(icon.getImage());
+	}
+	
+	/**
+	 * Set menu bar for the window
+	 */
+	private void setMenu() {
 		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
-		
+		setJMenuBar(menuBar);
+
 		final MenuFile mnFile = new MenuFile();
 		menuBar.add(mnFile.CreateMenu());
+
+		final MenuLog mnLog = new MenuLog();
+		menuBar.add(mnLog.CreateMenu());
 		
 		final MenuTools mnTools = new MenuTools();
 		menuBar.add(mnTools.CreateMenu());
-    }
-    
-    /**
-     * 
-     */
-    private void setVisible(boolean visible) {
-		frame.setVisible(visible);	
-    }
-    
-    private void setIcon() {
-        ImageIcon icon = new ImageIcon("./img/logo.png");
-        frame.setIconImage(icon.getImage());
-    }
+	}
 }
