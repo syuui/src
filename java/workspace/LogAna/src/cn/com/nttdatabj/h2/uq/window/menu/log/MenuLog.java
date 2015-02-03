@@ -9,10 +9,10 @@ public class MenuLog extends Menus {
 	public JMenu CreateMenu(){
 		final JMenu mn = new JMenu("ログ(L)");
 		mn.setMnemonic('L');
-		/*		
-		MenuItemOpen mntmOpen = new MenuItemOpen();
-		mn.add(mntmOpen.CreateMenuItem());
-		
+			
+		MenuItemSingleLog mntmSingleLog = new MenuItemSingleLog();
+		mn.add(mntmSingleLog.CreateMenuItem());
+		/*	
 		mn.addSeparator();
 		
 		MenuItemExit mntmExit = new MenuItemExit();

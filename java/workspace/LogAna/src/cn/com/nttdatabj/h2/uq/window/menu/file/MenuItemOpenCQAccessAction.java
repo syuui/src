@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 
 import cn.com.nttdatabj.h2.uq.GeneralClass;
 import cn.com.nttdatabj.h2.uq.LogDataStore;
+import cn.com.nttdatabj.h2.uq.bean.BeanCqAccess;
+import cn.com.nttdatabj.h2.uq.staticwidget.StaticFunction;
 import cn.com.nttdatabj.h2.uq.window.MainWindow;
 
 public class MenuItemOpenCQAccessAction implements ActionListener {
@@ -20,7 +22,8 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 	private final String _Title = "Open Log File";
 	private final String _ButtonName = "Open";
 	private final boolean _MultiSelectionEnabled = false;
-
+	LogDataStore store = null;
+	
 	MenuItemOpenCQAccessAction() {
 		super();
 	}
@@ -40,7 +43,7 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 
 		if (!_MultiSelectionEnabled) {
 
-			LogDataStore store = LogDataStore.getInstance();
+			store = LogDataStore.getInstance();
 
 			File f = jfc.getSelectedFile();
 			FileReader fr = null;
@@ -81,7 +84,13 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			
+			store.MoveFirst();
+			while( ! store.EndOfData() ) {
+				BeanCqAccess tmp = StaticFunction.AnalysisSingleCQAccessLog(store.GetNext());
+				// TODO: Next
+				
+			}
 		}
 	}
 }

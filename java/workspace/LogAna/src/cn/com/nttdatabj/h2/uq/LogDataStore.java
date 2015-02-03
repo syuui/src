@@ -32,10 +32,11 @@ public class LogDataStore {
 	private static LogDataStore instance = new LogDataStore();
 	private List<String> _logData;
 	private LogDataType _logType;
-	
+	private int current;
 	
 	private LogDataStore() {
 		_logData = new ArrayList<String>();
+		current = 0;
 	}
 	public static LogDataStore getInstance() {  
 		return instance;  
@@ -65,5 +66,22 @@ public class LogDataStore {
 	}
 	public LogDataType GetLogType() {
 		return _logType;
+	}
+	public void MoveFirst() {
+		current = 0;
+	}
+	public void MoveLast() {
+		if( _logData != null)
+			current = _logData.size()-1;
+	}
+	public String GetNext() {
+		if( _logData !=null && current < _logData.size()) {
+			return _logData.get(current++);
+		} else {
+			return null;
+		}
+	}
+	public boolean EndOfData() {
+		return _logData==null || current >= _logData.size() ;
 	}
 }

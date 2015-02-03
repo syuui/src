@@ -2,7 +2,6 @@ package cn.com.nttdatabj.h2.uq;
 
 import cn.com.nttdatabj.h2.uq.window.MainWindow;
 
-
 public class GeneralClass {
 	
 	private MainWindow _window = null;
@@ -23,7 +22,6 @@ public class GeneralClass {
 	public GeneralClass() {
 		_window = new MainWindow();
 		_window.setVisible(true);
-		
 	}	
 	public MainWindow getMainWindowInstance() {
 		return _window;
