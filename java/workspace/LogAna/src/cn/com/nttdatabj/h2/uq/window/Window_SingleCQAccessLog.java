@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import cn.com.nttdatabj.h2.uq.bean.BeanCqAccess;
 
+
 public class Window_SingleCQAccessLog extends JPanel {
 	protected static Format format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	private int _width = 480;

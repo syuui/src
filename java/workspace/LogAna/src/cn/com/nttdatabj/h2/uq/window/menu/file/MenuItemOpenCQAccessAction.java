@@ -23,7 +23,7 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 	private final String _ButtonName = "Open";
 	private final boolean _MultiSelectionEnabled = false;
 	LogDataStore store = null;
-	
+
 	MenuItemOpenCQAccessAction() {
 		super();
 	}
@@ -84,12 +84,14 @@ public class MenuItemOpenCQAccessAction implements ActionListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			store.MoveFirst();
-			while( ! store.EndOfData() ) {
-				BeanCqAccess tmp = StaticFunction.AnalysisSingleCQAccessLog(store.GetNext());
+			while (!store.EndOfData()) {
+				@SuppressWarnings("unused")
+				BeanCqAccess tmp = StaticFunction
+						.AnalysisSingleCQAccessLog(store.GetNext());
 				// TODO: Next
-				
+
 			}
 		}
 	}
