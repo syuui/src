@@ -14,6 +14,8 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import cn.com.nttdatabj.h2.uq.LAMsg;
+
 public class IPCWindow extends JFrame {
 
 	/**
@@ -36,7 +38,7 @@ public class IPCWindow extends JFrame {
 	 */
 	public IPCWindow() {
 		setResizable(false);
-		setTitle("IP電卓");
+		setTitle(LAMsg.MSG0050);
 		setIcon();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 420, 200);
@@ -52,13 +54,13 @@ public class IPCWindow extends JFrame {
 			return;
 
 		if (!getAddress()) {
-			JOptionPane.showMessageDialog(txtNetDec, "不正アドレスです");
+			JOptionPane.showMessageDialog(txtNetDec, LAMsg.MSG0051);
 			txtNetDec.grabFocus();
 			return;
 		}
 
 		if (!getSubnetMask()) {
-			JOptionPane.showMessageDialog(txtSubDec, "不正サブネットマスクです");
+			JOptionPane.showMessageDialog(txtSubDec, LAMsg.MSG0052);
 			txtSubDec.grabFocus();
 			return;
 		}
@@ -83,13 +85,13 @@ public class IPCWindow extends JFrame {
 
 	private boolean blankValues() {
 		if (txtNetDec.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(txtNetDec, "IPアドレス未入力");
+			JOptionPane.showMessageDialog(txtNetDec, LAMsg.MSG0053);
 			txtNetDec.grabFocus();
 			return true;
 		}
 
 		if (txtSubDec.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(txtSubDec, "Subnet Mask未入力");
+			JOptionPane.showMessageDialog(txtSubDec, LAMsg.MSG0054);
 			txtSubDec.grabFocus();
 			return true;
 		}
@@ -243,7 +245,7 @@ public class IPCWindow extends JFrame {
 		txtMaxDec.setBounds(150, 100, 250, 20);
 		getContentPane().add(txtMaxDec);
 
-		JButton btnCalc = new JButton("計算");
+		JButton btnCalc = new JButton(LAMsg.VAR0002);
 		btnCalc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				calculate();
@@ -260,7 +262,7 @@ public class IPCWindow extends JFrame {
 	}
 	
 	private void setIcon() {
-		ImageIcon icon = new ImageIcon("./img/ip.jpg");
+		ImageIcon icon = new ImageIcon(LAMsg.VAR0003);
 		setIconImage(icon.getImage());
 	}
 }

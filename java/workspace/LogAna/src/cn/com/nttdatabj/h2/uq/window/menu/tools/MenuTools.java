@@ -2,13 +2,14 @@ package cn.com.nttdatabj.h2.uq.window.menu.tools;
 
 import javax.swing.JMenu;
 
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.window.menu.Menus;
 
 public class MenuTools extends Menus {
 
 	@Override
 	public JMenu CreateMenu(){
-		final JMenu mn = new JMenu("ツール(T)");
+		final JMenu mn = new JMenu(LAMsg.MSG0300);
 		mn.setMnemonic('T');
 		
 		MenuItemIPC mntmIPC = new MenuItemIPC();

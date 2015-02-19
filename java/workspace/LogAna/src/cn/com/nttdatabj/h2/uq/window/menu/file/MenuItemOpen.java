@@ -3,6 +3,7 @@ package cn.com.nttdatabj.h2.uq.window.menu.file;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.window.menu.MenuItems;
 
 public class MenuItemOpen extends MenuItems {
@@ -13,7 +14,7 @@ public class MenuItemOpen extends MenuItems {
 
 	@Override
 	public JMenuItem CreateMenuItem() {
-		JMenu mntmOpen = new JMenu("ログを開く(O)");
+		JMenu mntmOpen = new JMenu(LAMsg.MSG0013);
 		mntmOpen.setMnemonic('O');
 
 		MenuItemOpenCQ mntmOpenCQ = new MenuItemOpenCQ();

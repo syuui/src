@@ -2,10 +2,13 @@ package cn.com.nttdatabj.h2.uq.window.menu.log;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
 import cn.com.nttdatabj.h2.uq.GeneralClass;
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.bean.BeanCqAccess;
 import cn.com.nttdatabj.h2.uq.staticwidget.StaticFunction;
 import cn.com.nttdatabj.h2.uq.window.MainWindow;
@@ -13,8 +16,8 @@ import cn.com.nttdatabj.h2.uq.window.Window_SingleCQAccessLog;
 
 public class MenuItemSingleLogCQAccessAction implements ActionListener {
 
-	private final String _Title = "ログ解析";
-	private final String _ButtonName = "解析";
+	private final String _Title = LAMsg.MSG0101;
+	private final String _ButtonName = LAMsg.MSG0102;
 
 	private JTextField txtLog = null;
 	private JButton btnAna = null;

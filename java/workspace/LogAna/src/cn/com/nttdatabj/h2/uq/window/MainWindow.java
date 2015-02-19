@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.window.menu.file.MenuFile;
 import cn.com.nttdatabj.h2.uq.window.menu.log.MenuLog;
 import cn.com.nttdatabj.h2.uq.window.menu.tools.MenuTools;
@@ -14,7 +15,7 @@ public class MainWindow extends JFrame{
 
 	public static String SINGLE_CQ_ACCESS_LOG_VIEW = "SINGLE_CQ_ACCESS_LOG_VIEW";
 	public static String BLANK_VIEW = "BLANK_VIEW";
-	private static String WINDOW_NAME = "UFO（UQ Fast Operation）";
+	private static String WINDOW_NAME = LAMsg.MSG0001;
 
 	private JPanel _WorkingPanel = new JPanel();
 	private CardLayout _WPLayout = new CardLayout();
@@ -86,7 +87,7 @@ public class MainWindow extends JFrame{
 	 * Set icon for the window
 	 */
 	private void setIcon() {
-		ImageIcon icon = new ImageIcon("./img/logo.jpg");
+		ImageIcon icon = new ImageIcon(LAMsg.VAR0001);
 		setIconImage(icon.getImage());
 	}
 	

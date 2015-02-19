@@ -3,6 +3,7 @@ package cn.com.nttdatabj.h2.uq.window.menu.file;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.window.menu.MenuItems;
 
 public class MenuItemOpenCQ extends MenuItems {
@@ -13,7 +14,7 @@ public class MenuItemOpenCQ extends MenuItems {
 	
 	@Override
 	public JMenuItem CreateMenuItem(){
-		JMenu mntmOpen = new JMenu("CQ");
+		JMenu mntmOpen = new JMenu(LAMsg.MSG0014);
 		mntmOpen.setMnemonic('C');
 		
 		MenuItemOpenCQAccess mntmOpenCQAccess = 

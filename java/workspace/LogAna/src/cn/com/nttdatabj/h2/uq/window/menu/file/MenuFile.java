@@ -2,13 +2,14 @@ package cn.com.nttdatabj.h2.uq.window.menu.file;
 
 import javax.swing.JMenu;
 
+import cn.com.nttdatabj.h2.uq.LAMsg;
 import cn.com.nttdatabj.h2.uq.window.menu.Menus;
 
 public class MenuFile extends Menus {
 
 	@Override
 	public JMenu CreateMenu(){
-		final JMenu mn = new JMenu("ファイル(F)");
+		final JMenu mn = new JMenu(LAMsg.MSG0011);
 		mn.setMnemonic('F');
 		
 		MenuItemOpen mntmOpen = new MenuItemOpen();
